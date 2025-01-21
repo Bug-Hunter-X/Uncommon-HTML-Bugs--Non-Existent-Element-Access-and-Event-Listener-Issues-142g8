@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Uncommon HTML Bug</title>
+</head>
+<body>
+  <div id="myDiv">
+    This text should be visible.
+  </div>
+  <script>
+    // Incorrectly accessing a non-existent element
+    document.getElementById('nonExistentElement').innerHTML = 'This will cause an error';
+    
+    //Another uncommon bug: Using an event listener on an element that doesn't yet exist
+    document.getElementById('anotherElement').addEventListener('click', function() {
+        alert('Element Clicked!');
+    });
+    
+    //Creating an element with incorrect attributes
+    let newElement = document.createElement('img');
+    newElement.src = 'image.jpg'; //missing quotes
+    document.body.appendChild(newElement);
+  </script>
+</body>
+</html>
