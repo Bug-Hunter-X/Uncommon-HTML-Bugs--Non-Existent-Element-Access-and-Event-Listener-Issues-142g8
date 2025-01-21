@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Uncommon HTML Bug Solution</title>
+</head>
+<body>
+  <div id="myDiv">
+    This text should be visible.
+  </div>
+  <div id="anotherElement">
+    Click me!
+  </div>
+  <script>
+    // Correctly accessing the existing element
+    if (document.getElementById('myDiv')) {
+        document.getElementById('myDiv').innerHTML = 'Text Updated!';
+    }
+    
+    //Adding event listener after element creation
+    document.addEventListener('DOMContentLoaded', function() {
+        document.getElementById('anotherElement').addEventListener('click', function() {
+            alert('Element Clicked!');
+        });
+    });
+    
+    //Creating element with correct attributes
+    let newElement = document.createElement('img');
+    newElement.src = 'image.jpg';
+    document.body.appendChild(newElement);
+  </script>
+</body>
+</html>
